@@ -5,4 +5,5 @@ Este projeto é um conjunto de API's que comunicam-se entre si de forma assíncr
 <img src="https://i.imgur.com/9xHpUjS.png">
 <br>
 <br>
+No total serão 8 serviços rodando ao mesmo tempo, fechando o ciclo total de uma compra
 
