@@ -1,20 +1,13 @@
 package br.com.pagsys.msusers.service;
 
 import br.com.pagsys.msusers.dto.User;
-import br.com.pagsys.msusers.model.UserEntity;
 import br.com.pagsys.msusers.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityNotFoundException;
 import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
 
 @Slf4j
 @Service
@@ -25,8 +18,8 @@ public class UserService {
 
     public User createUser(User user) {
 
-        List<UserRepresentation> userRepresentations = keycloakUserService.readUserByEmail(user.getEmail());
-        if (userRepresentations.size() > 0) {
+        boolean isEmailAvailable = !(keycloakUserService.readUserByEmail(user.getEmail()).size() > 0);
+        if (!isEmailAvailable) {
             throw new RuntimeException("This email already registered as a user. Please check and retry.");
         }
 
@@ -48,8 +41,8 @@ public class UserService {
         if (userCreationResponse == 201) {
             log.info("User created under given username {}", user.getEmail());
 
-            List<UserRepresentation> userRepresentations1 = keycloakUserService.readUserByEmail(user.getEmail());
-            user.setAuthId(userRepresentations1.get(0).getId());
+            UserRepresentation savedUser = keycloakUserService.readUserByEmail(user.getEmail()).get(0);
+            user.setAuthId(savedUser.getId());
 
             return user;
         }
