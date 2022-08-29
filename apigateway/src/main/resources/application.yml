@@ -1,0 +1,45 @@
+#SECURITY BASED CONFIGURATIONS
+app:
+  config:
+    keycloak:
+      url: http://localhost:8081/auth
+      realm: javatodev-internet-banking
+
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            token-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/token
+            authorization-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/auth
+            user-name-attribute: preferred_username
+            user-info-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/userinfo
+            jwk-set-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/certs
+            user-info-authentication-method: header
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/pagsysrealm
+
+
+
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-user:qS40X346r7^L@localhost:8761/eureka
+
+

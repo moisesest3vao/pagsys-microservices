@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: mspayment
+  datasource:
+    url: jdbc:mysql://localhost:3306/purchases
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-user:qS40X346r7^L@localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+
+
+
+
