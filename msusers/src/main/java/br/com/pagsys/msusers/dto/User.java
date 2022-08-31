@@ -1,7 +1,6 @@
 package br.com.pagsys.msusers.dto;
 
 
-import br.com.pagsys.msusers.model.UserEntity;
 import lombok.Data;
 
 @Data
@@ -24,7 +23,4 @@ public class User {
         this.authId = authId;
     }
 
-    public UserEntity toEntity() {
-        return new UserEntity(authId, email, firstName, lastName);
-    }
 }

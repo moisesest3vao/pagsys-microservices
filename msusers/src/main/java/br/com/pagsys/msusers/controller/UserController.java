@@ -32,7 +32,7 @@ public class UserController {
 
         User user = userService.createUser(request);
 
-        log.info("Sending message to email microsservice");
+        log.info("Sending message to email microservice");
         kafkaTemplate.send("USER-LIFECYCLE-EVENTS",user.getEmail(), EmailType.JOINER.toString());
 
         return ResponseEntity.ok(user);
@@ -44,7 +44,7 @@ public class UserController {
         String token = request.getHeader("authorization");
         Integer response = userService.deleteUser(email, token);
         if(response == 0){
-            log.info("Sending message to email microsservice");
+            log.info("Sending message to email microservice");
             kafkaTemplate.send("USER-LIFECYCLE-EVENTS",email, EmailType.LEAVER.toString());
 
             return ResponseEntity.ok().build();

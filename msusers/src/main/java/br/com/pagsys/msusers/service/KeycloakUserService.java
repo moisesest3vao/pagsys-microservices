@@ -3,7 +3,6 @@ package br.com.pagsys.msusers.service;
 import br.com.pagsys.msusers.config.KeycloakManager;
 import br.com.pagsys.msusers.dto.GetUserByTokenResponse;
 import lombok.NoArgsConstructor;
-import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -60,7 +59,7 @@ public class KeycloakUserService {
         System.out.println(token);
         headers.set("authorization", token);
 
-        HttpEntity<Object> request = new HttpEntity<Object>(headers);
+        HttpEntity<Object> request = new HttpEntity<>(headers);
 
         ResponseEntity<GetUserByTokenResponse> response = this.restTemplate.exchange(
                 url,
@@ -71,19 +70,11 @@ public class KeycloakUserService {
         );
 
         if(response.getStatusCode() == HttpStatus.OK) {
-
             return response.getBody();
         }
         return null;
     }
 
 
-    public UserRepresentation readUser(String authId) {
-        try {
-            UserResource userResource = keyCloakManager.getKeyCloakInstanceWithRealm().users().get(authId);
-            return userResource.toRepresentation();
-        } catch (Exception e) {
-            throw new RuntimeException("User not found under given ID");
-        }
-    }
+
 }

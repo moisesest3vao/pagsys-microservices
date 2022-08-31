@@ -7,9 +7,6 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
-import org.springframework.web.reactive.config.EnableWebFlux;
 
 @SpringBootApplication
 @EnableEurekaClient
@@ -25,7 +22,6 @@ public class ApigatewayApplication {
 		return builder.routes()
 				.route(r -> r
 						.path("/payment/**")
-					//	.filters(f -> f.addRequestHeader("username",""))
 						.uri("lb://mspayment"))
 				.route(r -> r
 						.path("/users/**")

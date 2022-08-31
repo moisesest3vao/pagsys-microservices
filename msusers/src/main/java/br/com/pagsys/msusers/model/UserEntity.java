@@ -20,14 +20,4 @@ public class UserEntity {
     private String givenName;
     private String familyName;
 
-    public UserEntity(String sub, String email, String firstName, String lastName) {
-        this.sub = sub;
-        this.email = email;
-        this.givenName = firstName;
-        this.familyName = lastName;
-    }
-
-    public User toDto() {
-        return new User(id,email,givenName,familyName,"","",sub);
-    }
 }
