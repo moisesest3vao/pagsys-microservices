@@ -5,8 +5,8 @@ spring:
     basic:
       enabled: true
     user:
-      name: eureka-user
-      password: qS40X346r7^L
+      name: admin
+      password: admin
 server:
   port: 8761
 

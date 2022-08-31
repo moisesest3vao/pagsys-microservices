@@ -18,6 +18,8 @@ spring:
       hibernate:
         ddl-auto: create-drop
       show-sql: true
+  kafka:
+    bootstrap-servers: localhost:9092
 
 server:
   port: 0

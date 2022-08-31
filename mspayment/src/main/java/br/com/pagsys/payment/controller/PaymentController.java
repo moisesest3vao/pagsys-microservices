@@ -1,36 +1,40 @@
 package br.com.pagsys.payment.controller;
 
-import br.com.pagsys.payment.dto.OrderDto;
-import br.com.pagsys.payment.repository.OrderRepository;
-import br.com.pagsys.payment.service.PaymentService;
-import org.keycloak.KeycloakSecurityContext;
+import br.com.pagsys.payment.dto.PurchaseDto;
+import br.com.pagsys.payment.enums.EmailType;
+import br.com.pagsys.payment.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.core.SecurityContext;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
     @Autowired
-    private PaymentService paymentService;
+    private PurchaseService purchaseService;
+
+
 
     @GetMapping
     public String ok(HttpServletRequest request){
-        String authorization = request.getHeader("authorization");
-        System.out.println(authorization);
-        request.getHeaderNames().asIterator().forEachRemaining(h -> System.out.println(h));
+
         return "ok";
     }
 
     @GetMapping("/order")
-    public ResponseEntity<?> create(OrderDto orderDto){
-        OrderDto order = this.paymentService.create(orderDto);
+    public ResponseEntity<?> create(@RequestBody PurchaseDto purchaseDto, HttpServletRequest request){
+        String authorization = request.getHeader("authorization");
+        PurchaseDto order = this.purchaseService.create(purchaseDto, authorization);
+
+        if(order != null){
+
+        }
 
         return order != null ? ResponseEntity.ok(order) : ResponseEntity.badRequest().build();
     }

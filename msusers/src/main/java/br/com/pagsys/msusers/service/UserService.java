@@ -1,20 +1,30 @@
 package br.com.pagsys.msusers.service;
 
+import br.com.pagsys.msusers.dto.GetUserByTokenResponse;
 import br.com.pagsys.msusers.dto.User;
 import br.com.pagsys.msusers.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
 import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class UserService {
-    private final KeycloakUserService keycloakUserService;
-    private final UserRepository userRepository;
+    @Autowired
+    private KeycloakUserService keycloakUserService;
+    @Autowired
+    private UserRepository userRepository;
+
 
     public User createUser(User user) {
 
@@ -38,17 +48,34 @@ public class UserService {
 
         Integer userCreationResponse = keycloakUserService.createUser(userRepresentation);
 
-        if (userCreationResponse == 201) {
-            log.info("User created under given username {}", user.getEmail());
-
-            UserRepresentation savedUser = keycloakUserService.readUserByEmail(user.getEmail()).get(0);
-            user.setAuthId(savedUser.getId());
-
-            return user;
+        if (userCreationResponse != 201) {
+            throw new RuntimeException("We couldn't find user under given identification. Please check and retry");
         }
 
-        throw new RuntimeException("We couldn't find user under given identification. Please check and retry");
+        log.info("User created under given username {}", user.getEmail());
 
+        UserRepresentation savedUser = keycloakUserService.readUserByEmail(user.getEmail()).get(0);
+        user.setAuthId(savedUser.getId());
+
+        return user;
+
+
+    }
+
+    public Integer deleteUser(String email, String token) {
+        List<UserRepresentation> queryResultByEmail = keycloakUserService.readUserByEmail(email);
+        if(queryResultByEmail.isEmpty()){
+           return 1;
+        }
+        UserRepresentation userToBeDeleted = queryResultByEmail.get(0);
+
+        GetUserByTokenResponse userWhoRequestedDeletion = keycloakUserService.readUserByToken(token);
+
+        if(Objects.equals(userWhoRequestedDeletion.getPreferred_username(), userToBeDeleted.getUsername())){
+            return keycloakUserService.deleteUserByEmail(userToBeDeleted.getUsername());
+        }
+
+        return 1;
     }
 
 //    public List<User> readUsers(Pageable pageable) {

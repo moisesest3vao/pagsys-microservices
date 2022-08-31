@@ -15,12 +15,21 @@ public class EmailListener {
     @Autowired
     EmailService emailService;
 
-    @KafkaListener(topics = "USER-LIFECYCLE-EVENTS", groupId = "groupId-1" )
-    public void listen(String type, @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String email){
+    @KafkaListener(topics = "USER-LIFECYCLE-EVENTS", groupId = "groupId-1")
+    public void listenToLifecycleEvents(String type, @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String email){
         log.info("Sending email to "+email+" of type "+type);
         switch (type) {
             case "JOINER" -> emailService.sendJoinerEmail(email);
             case "LEAVER" -> emailService.sendLeaverEmail(email);
+        }
+    }
+
+    @KafkaListener(topics = "NEW-PURCHASE", groupId = "groupId-1")
+    public void listenToNewPurchases(String type, @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String email){
+        log.info("Sending email to "+email+" of type "+type);
+        switch (type) {
+            case "SUCCESS_PURCHASE" -> emailService.sendSuccessPurchase(email);
+            case "FAILED_PURCHASE" -> emailService.sendFailedPurchase(email);
         }
     }
 }

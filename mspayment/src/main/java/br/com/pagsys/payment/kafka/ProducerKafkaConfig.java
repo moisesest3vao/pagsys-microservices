@@ -1,6 +1,5 @@
-package br.com.pagsys.msusers.config;
+package br.com.pagsys.payment.kafka;
 
-import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -46,7 +45,8 @@ public class ProducerKafkaConfig {
 
     @Bean
     public NewTopic newUser(){
-        return new NewTopic("USER-LIFECYCLE-EVENTS", 10, Short.parseShort("1"));
+        return new NewTopic("NEW-PURCHASE", 10, Short.parseShort("1"));
     }
 
 }
+

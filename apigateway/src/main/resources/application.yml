@@ -6,6 +6,9 @@ app:
       realm: javatodev-internet-banking
 
 spring:
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
   application:
     name: apigateway
   cloud:
@@ -28,9 +31,6 @@ spring:
       resource-server:
         jwt:
           issuer-uri: http://localhost:8081/realms/pagsysrealm
-
-
-
 
 server:
   port: 8080
