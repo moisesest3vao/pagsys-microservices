@@ -1,11 +1,9 @@
 package br.com.pagsys.payment.controller;
 
 import br.com.pagsys.payment.dto.PurchaseDto;
-import br.com.pagsys.payment.enums.EmailType;
 import br.com.pagsys.payment.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,9 +31,11 @@ public class PaymentController {
         PurchaseDto order = this.purchaseService.create(purchaseDto, authorization);
 
         if(order != null){
+            //TODO: Remove from storage message
 
+            return ResponseEntity.ok(order);
         }
 
-        return order != null ? ResponseEntity.ok(order) : ResponseEntity.badRequest().build();
+        return ResponseEntity.badRequest().build();
     }
 }

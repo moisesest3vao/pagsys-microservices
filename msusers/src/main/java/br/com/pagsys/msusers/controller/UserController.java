@@ -6,8 +6,6 @@ import br.com.pagsys.msusers.enums.EmailType;
 import br.com.pagsys.msusers.service.KeycloakUserService;
 import br.com.pagsys.msusers.service.UserService;
 import br.com.pagsys.msusers.util.StringUtil;
-import com.netflix.discovery.converters.Auto;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +13,6 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Enumeration;
 
 @Slf4j
 @RestController
@@ -30,7 +27,7 @@ public class UserController {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     @PostMapping(value = "/register")
-    public ResponseEntity createUser(@RequestBody User request) {
+    public ResponseEntity<?> createUser(@RequestBody User request) {
         log.info("Creating user with {}", request.toString());
 
         User user = userService.createUser(request);

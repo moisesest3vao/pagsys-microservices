@@ -3,15 +3,11 @@ package br.com.pagsys.msusers.service;
 import br.com.pagsys.msusers.dto.GetUserByTokenResponse;
 import br.com.pagsys.msusers.dto.User;
 import br.com.pagsys.msusers.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Collections;
 import java.util.List;

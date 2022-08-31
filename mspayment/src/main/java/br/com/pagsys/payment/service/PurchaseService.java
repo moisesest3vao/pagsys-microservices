@@ -20,6 +20,9 @@ public class PurchaseService {
     @Autowired
     private UserClient userClient;
 
+    public PurchaseService() {
+    }
+
     public PurchaseDto create(PurchaseDto dto, String authorization){
         UserDto userByToken = userClient.getUserByToken(authorization);
 

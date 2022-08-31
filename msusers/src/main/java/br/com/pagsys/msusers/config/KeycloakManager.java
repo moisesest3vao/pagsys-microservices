@@ -14,8 +14,4 @@ public class KeycloakManager {
         return keycloakProperties.getInstance().realm(keycloakProperties.getRealm());
     }
 
-//    public String getKeycloakUrl(){
-//        keycloakProperties.get
-//    }
-
 }
