@@ -1,23 +1,17 @@
-app:
-  config:
-    keycloak:
-      server-url: http://localhost:8081
-      realm: pagsysrealm
-      clientId: msusers
-      client-secret: UnGWpNNNy5nymsftqbVM50C38erp3CEd
 
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
   application:
-    name: msusers
+    name: msinventory
   datasource:
-    url: jdbc:mysql://localhost:3306/users
+    url: jdbc:mysql://localhost:3306/inventory?createDatabaseIfNotExist=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jpa:
-      hibernate:
-        ddl-auto: create-drop
-      show-sql: true
+
   kafka:
     bootstrap-servers: localhost:9092
 
@@ -30,3 +24,6 @@ eureka:
       defaultZone: http://admin:admin@localhost:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+
+

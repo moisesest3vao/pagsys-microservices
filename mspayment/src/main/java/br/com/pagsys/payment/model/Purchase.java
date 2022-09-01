@@ -3,6 +3,7 @@ package br.com.pagsys.payment.model;
 import br.com.pagsys.payment.converter.StringListConverter;
 import br.com.pagsys.payment.dto.PurchaseDto;
 import br.com.pagsys.payment.dto.UserDto;
+import br.com.pagsys.payment.enums.PurchaseStatus;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,34 +22,25 @@ public class Purchase {
     private Long id;
     @Convert(converter = StringListConverter.class)
     private List<String> products;
-    private Long amount;
     private BigDecimal totalPrice;
     private String user;
+    @Enumerated(EnumType.STRING)
+    private PurchaseStatus status;
 
-    public Purchase(List<String> products, Long amount, BigDecimal totalPrice, String user) {
+    public Purchase(List<String> products, BigDecimal totalPrice, String user) {
         this.products = products;
-        this.amount = amount;
         this.totalPrice = totalPrice;
         this.user = user;
+        this.status = PurchaseStatus.IN_PROCESSING;
     }
 
     public static Purchase build(PurchaseDto dto, UserDto userByToken) {
         return new Purchase(
                 dto.getProducts(),
-                dto.getAmount(),
                 dto.getTotalPrice(),
                 userByToken.getSub()
         );
     }
 
-    @Override
-    public String toString() {
-        return "Purchase{" +
-                "id=" + id +
-                ", products=" + products +
-                ", amount=" + amount +
-                ", totalPrice=" + totalPrice +
-                ", user='" + user + '\'' +
-                '}';
-    }
+
 }

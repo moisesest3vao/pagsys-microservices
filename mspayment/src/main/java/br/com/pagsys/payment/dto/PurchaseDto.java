@@ -12,20 +12,16 @@ import java.util.List;
 @NoArgsConstructor
 public class PurchaseDto {
 
-    private Long id;
+    public Long id;
     @NotNull
     @NotEmpty
-    private List<String> products;
+    public List<String> products;
     @NotNull
     @NotEmpty
-    private Long amount;
-    @NotNull
-    @NotEmpty
-    private BigDecimal totalPrice;
-    private String user;
+    public BigDecimal totalPrice;
+    public String user;
 
     public PurchaseDto(Purchase model) {
-        this.amount = model.getAmount();
         this.id = model.getId();
         this.totalPrice = model.getTotalPrice();
         this.products = model.getProducts();

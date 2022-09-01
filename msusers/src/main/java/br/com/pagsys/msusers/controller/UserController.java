@@ -7,6 +7,7 @@ import br.com.pagsys.msusers.service.KeycloakUserService;
 import br.com.pagsys.msusers.service.UserService;
 import br.com.pagsys.msusers.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -29,7 +30,6 @@ public class UserController {
     @PostMapping(value = "/register")
     public ResponseEntity<?> createUser(@RequestBody User request) {
         log.info("Creating user with {}", request.toString());
-
         User user = userService.createUser(request);
 
         log.info("Sending message to email microservice");
@@ -56,13 +56,20 @@ public class UserController {
     public ResponseEntity<GetUserByTokenResponse> getUserByToken(HttpServletRequest request){
         String authorization = request.getHeader("authorization");
         if(StringUtil.isTokenFormatValid(authorization)){
-            GetUserByTokenResponse getUserByTokenResponse =
-                    this.keycloakUserService.readUserByToken(authorization);
-            return getUserByTokenResponse
-                    != null ? ResponseEntity.ok(getUserByTokenResponse) : ResponseEntity.badRequest().build();
+            GetUserByTokenResponse getUserByTokenResponse = this.keycloakUserService.readUserByToken(authorization);
+
+            return getUserByTokenResponse != null ? ResponseEntity.ok(getUserByTokenResponse) : ResponseEntity.badRequest().build();
         }
 
         return ResponseEntity.badRequest().build();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getUserByToken(@PathVariable String id){
+        log.info("trying to find user with sub "+id);
+        UserRepresentation userRepresentation = this.keycloakUserService.readUserBySub(id);
+
+        return userRepresentation != null ? ResponseEntity.ok(userRepresentation) : ResponseEntity.badRequest().build();
     }
 
 //    @GetMapping

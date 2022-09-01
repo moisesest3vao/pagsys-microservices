@@ -1,4 +1,4 @@
-package br.com.pagsys.payment.kafka;
+package br.com.pagsys.msinventory.config;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
@@ -26,7 +26,7 @@ public class ProducerKafkaConfig<T> {
         var configs = new HashMap<String, Object>();
         configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
         configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+        configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 
         return new DefaultKafkaProducerFactory<>(configs);
     }
@@ -36,16 +36,5 @@ public class ProducerKafkaConfig<T> {
         return new KafkaTemplate<>(producerFactory());
     }
 
-    @Bean
-    public KafkaAdmin kafkaAdmin(){
-        var configs = new HashMap<String, Object>();
-        configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
-        return new KafkaAdmin(configs);
-    }
-
-    @Bean
-    public NewTopic newUser(){
-        return new NewTopic("USER-LIFECYCLE-EVENTS", 10, Short.parseShort("1"));
-    }
 
 }

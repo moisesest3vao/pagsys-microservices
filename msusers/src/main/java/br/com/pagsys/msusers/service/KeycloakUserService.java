@@ -3,6 +3,8 @@ package br.com.pagsys.msusers.service;
 import br.com.pagsys.msusers.config.KeycloakManager;
 import br.com.pagsys.msusers.dto.GetUserByTokenResponse;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @Service
 @NoArgsConstructor
+@Slf4j
 public class KeycloakUserService {
 
     @Autowired
@@ -76,5 +79,13 @@ public class KeycloakUserService {
     }
 
 
+    public UserRepresentation readUserBySub(String id) {
+        UserRepresentation user = keyCloakManager.getKeyCloakInstanceWithRealm().users().get(id).toRepresentation();
+        if(user != null){
+            return user;
+        }
+        log.info("user not found");
 
+        return null;
+    }
 }

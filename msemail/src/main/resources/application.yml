@@ -16,7 +16,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: moisesestevaosilva2004@gmail.com
-    password: yourpassword
+    password: senha
     properties:
       mail:
         smtp:
@@ -36,7 +36,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-user:qS40X346r7^L@localhost:8761/eureka
+      defaultZone: http://admin:admin@localhost:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 

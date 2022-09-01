@@ -30,6 +30,7 @@ public class EmailListener {
         switch (type) {
             case "SUCCESS_PURCHASE" -> emailService.sendSuccessPurchase(email);
             case "FAILED_PURCHASE" -> emailService.sendFailedPurchase(email);
+            case "PROCESSING_PURCHASE" -> emailService.sendProcessingPurchase(email);
         }
     }
 }
