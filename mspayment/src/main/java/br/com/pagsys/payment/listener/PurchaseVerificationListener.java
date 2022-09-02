@@ -1,5 +1,6 @@
 package br.com.pagsys.payment.listener;
 
+import br.com.pagsys.payment.dto.PurchaseVerificationResultDto;
 import br.com.pagsys.payment.service.PurchaseService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,8 @@ public class PurchaseVerificationListener {
     @Autowired
     private PurchaseService purchaseService;
 
-    @KafkaListener(topics = "PURCHASE-VERIFICATION", groupId = "groupId-1")
-    void listenToLifecycleEvents(String validationResult, @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String purchaseId){
-        purchaseService.validate(purchaseId, validationResult);
+    @KafkaListener(topics = "PURCHASE-VERIFICATION", groupId = "groupId-1", containerFactory = "purchaseKafkaListenerContainerFactory")
+    void listenToLifecycleEvents(PurchaseVerificationResultDto result, @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String purchaseId){
+        purchaseService.validate(purchaseId, result);
     }
 }

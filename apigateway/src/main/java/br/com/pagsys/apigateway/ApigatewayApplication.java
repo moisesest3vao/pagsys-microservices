@@ -26,7 +26,9 @@ public class ApigatewayApplication {
 				.route(r -> r
 						.path("/users/**")
 						.uri("lb://msusers"))
+				.route(r -> r
+						.path("/inventory/**")
+						.uri("lb://msinventory"))
 				.build();
 	}
-
 }

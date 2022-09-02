@@ -60,17 +60,19 @@ public class UserService {
 
     public Integer deleteUser(String email, String token) {
         List<UserRepresentation> queryResultByEmail = keycloakUserService.readUserByEmail(email);
-        if(queryResultByEmail.isEmpty()){
-           return 1;
+        if(!queryResultByEmail.isEmpty()){
+            UserRepresentation userToBeDeleted = queryResultByEmail.get(0);
+            GetUserByTokenResponse userWhoRequestedDeletion = keycloakUserService.readUserByToken(token);
+
+            if(userWhoRequestedDeletion != null){
+                boolean authentication = Objects.equals(
+                        userWhoRequestedDeletion.getPreferred_username(),
+                        userToBeDeleted.getUsername()
+                );
+
+                return authentication ? keycloakUserService.deleteUserByEmail(userToBeDeleted.getUsername()) : 1;
+            }
         }
-        UserRepresentation userToBeDeleted = queryResultByEmail.get(0);
-
-        GetUserByTokenResponse userWhoRequestedDeletion = keycloakUserService.readUserByToken(token);
-
-        if(Objects.equals(userWhoRequestedDeletion.getPreferred_username(), userToBeDeleted.getUsername())){
-            return keycloakUserService.deleteUserByEmail(userToBeDeleted.getUsername());
-        }
-
         return 1;
     }
 

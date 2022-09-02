@@ -27,6 +27,8 @@ public class UserController {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
+
+
     @PostMapping(value = "/register")
     public ResponseEntity<?> createUser(@RequestBody User request) {
         log.info("Creating user with {}", request.toString());
@@ -40,11 +42,11 @@ public class UserController {
 
     @DeleteMapping(value = "/delete/{email}")
     public ResponseEntity<?> createUser(@PathVariable String email, HttpServletRequest request) {
-        log.info("Creating user with {}", request.toString());
+        log.info("creating user with {}", request.toString());
         String token = request.getHeader("authorization");
         Integer response = userService.deleteUser(email, token);
         if(response == 0){
-            log.info("Sending message to email microservice");
+            log.info("sending message to email microservice");
             kafkaTemplate.send("USER-LIFECYCLE-EVENTS",email, EmailType.LEAVER.toString());
 
             return ResponseEntity.ok().build();
@@ -55,13 +57,13 @@ public class UserController {
     @GetMapping("/getcurrent")
     public ResponseEntity<GetUserByTokenResponse> getUserByToken(HttpServletRequest request){
         String authorization = request.getHeader("authorization");
-        if(StringUtil.isTokenFormatValid(authorization)){
-            GetUserByTokenResponse getUserByTokenResponse = this.keycloakUserService.readUserByToken(authorization);
+        GetUserByTokenResponse getUserByTokenResponse = null;
 
-            return getUserByTokenResponse != null ? ResponseEntity.ok(getUserByTokenResponse) : ResponseEntity.badRequest().build();
+        if(StringUtil.isTokenFormatValid(authorization)){
+            getUserByTokenResponse = this.keycloakUserService.readUserByToken(authorization);
         }
 
-        return ResponseEntity.badRequest().build();
+        return getUserByTokenResponse != null ? ResponseEntity.ok(getUserByTokenResponse) : ResponseEntity.notFound().build();
     }
 
     @GetMapping("/{id}")
@@ -69,19 +71,7 @@ public class UserController {
         log.info("trying to find user with sub "+id);
         UserRepresentation userRepresentation = this.keycloakUserService.readUserBySub(id);
 
-        return userRepresentation != null ? ResponseEntity.ok(userRepresentation) : ResponseEntity.badRequest().build();
+        return userRepresentation != null ? ResponseEntity.ok(userRepresentation) : ResponseEntity.notFound().build();
     }
-
-//    @GetMapping
-//    public ResponseEntity readUsers(Pageable pageable) {
-//        log.info("Reading all users from API");
-//        return ResponseEntity.ok(userService.readUsers(pageable));
-//    }
-//
-//    @GetMapping(value = "/{id}")
-//    public ResponseEntity readUser(@PathVariable("id") Long id) {
-//        log.info("Reading user by id {}", id);
-//        return ResponseEntity.ok(userService.readUser(id));
-//    }
 
 }

@@ -16,14 +16,10 @@ public class PurchaseDto {
     @NotNull
     @NotEmpty
     public List<String> products;
-    @NotNull
-    @NotEmpty
-    public BigDecimal totalPrice;
     public String user;
 
     public PurchaseDto(Purchase model) {
         this.id = model.getId();
-        this.totalPrice = model.getTotalPrice();
         this.products = model.getProducts();
         this.user = model.getUser();
     }

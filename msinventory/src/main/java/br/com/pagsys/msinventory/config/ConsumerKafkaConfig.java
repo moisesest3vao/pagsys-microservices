@@ -22,28 +22,11 @@ public class ConsumerKafkaConfig {
     private KafkaProperties kafkaProperties;
 
     @Bean
-    public ConsumerFactory<String, String> consumerFactory(){
-        var configs = new HashMap<String, Object>();
-        configs.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
-        configs.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        configs.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-
-        return new DefaultKafkaConsumerFactory<>(configs);
-    }
-
-    @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory(){
-        var factory = new ConcurrentKafkaListenerContainerFactory<String, String>();
-        factory.setConsumerFactory(consumerFactory());
-        return factory;
-    }
-
-    @Bean
     public ConsumerFactory<String, PurchaseDto> purchaseConsumerFactory(){
         var configs = new HashMap<String, Object>();
         configs.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
-        configs.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        configs.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+        //configs.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        //configs.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
         var jsonDeserializer = new JsonDeserializer<>(PurchaseDto.class)
                 .trustedPackages("*")
                 .forKeys();

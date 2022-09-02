@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -24,6 +25,9 @@ public class KeycloakUserService {
     private KeycloakManager keyCloakManager;
     @Autowired
     private RestTemplate restTemplate;
+
+    @Value("${app.config.keycloak.server-url}")
+    String keycloakServerUrl;
 
 
     public Integer createUser(UserRepresentation userRepresentation) {
@@ -54,8 +58,7 @@ public class KeycloakUserService {
     }
 
     public GetUserByTokenResponse readUserByToken(String token) {
-
-        String url = "http://localhost:8081/realms/pagsysrealm/protocol/openid-connect/userinfo";
+        String url = keycloakServerUrl + "/realms/pagsysrealm/protocol/openid-connect/userinfo";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));

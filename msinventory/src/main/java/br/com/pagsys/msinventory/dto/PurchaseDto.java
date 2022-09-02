@@ -12,7 +12,6 @@ public class PurchaseDto {
 
     private Long id;
     private List<String> products;
-    private BigDecimal totalPrice;
     private String user;
 
 }

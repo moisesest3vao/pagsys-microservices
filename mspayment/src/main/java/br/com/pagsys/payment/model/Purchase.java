@@ -22,14 +22,12 @@ public class Purchase {
     private Long id;
     @Convert(converter = StringListConverter.class)
     private List<String> products;
-    private BigDecimal totalPrice;
     private String user;
     @Enumerated(EnumType.STRING)
     private PurchaseStatus status;
 
-    public Purchase(List<String> products, BigDecimal totalPrice, String user) {
+    public Purchase(List<String> products, String user) {
         this.products = products;
-        this.totalPrice = totalPrice;
         this.user = user;
         this.status = PurchaseStatus.IN_PROCESSING;
     }
@@ -37,7 +35,6 @@ public class Purchase {
     public static Purchase build(PurchaseDto dto, UserDto userByToken) {
         return new Purchase(
                 dto.getProducts(),
-                dto.getTotalPrice(),
                 userByToken.getSub()
         );
     }

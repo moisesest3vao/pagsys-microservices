@@ -19,7 +19,6 @@ public class PurchaseListener {
     @KafkaListener(topics = "TRY-TO-PURCHASE", groupId = "groupId-1", containerFactory = "purchaseKafkaListenerContainerFactory")
     public void listenToLifecycleEvents(PurchaseDto purchase, @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String purchaseId){
         inventoryService.executePurchase(purchase);
-
     }
 
 

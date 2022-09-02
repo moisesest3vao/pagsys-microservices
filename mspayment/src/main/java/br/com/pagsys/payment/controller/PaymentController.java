@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/payment")
@@ -23,15 +24,13 @@ public class PaymentController {
     }
 
     @GetMapping("/order")
-    public ResponseEntity<?> create(@RequestBody PurchaseDto purchaseDto, HttpServletRequest request){
+    public ResponseEntity<?> create(@RequestBody @Valid PurchaseDto purchaseDto, HttpServletRequest request){
 
         String authorization = request.getHeader("authorization");
         PurchaseDto order = this.purchaseService.create(purchaseDto, authorization);
 
         if(order != null){
-            //TODO: Remove from storage message
-            //return 0 if the product is available and 1 if it isn't
-            Integer response = this.purchaseService.sendInformationToInventory(order);
+            this.purchaseService.sendInformationToInventory(order);
             return ResponseEntity.ok(order);
         }
 
