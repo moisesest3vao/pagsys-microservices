@@ -6,6 +6,7 @@ import br.com.pagsys.msinventory.dto.PurchaseVerificationResultDto;
 import br.com.pagsys.msinventory.enums.PurchaseVerificationResult;
 import br.com.pagsys.msinventory.model.Product;
 import br.com.pagsys.msinventory.repository.ProductRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,8 +14,11 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Service
+@Slf4j
 public class InventoryService {
 
     @Autowired
@@ -23,25 +27,34 @@ public class InventoryService {
     private KafkaTemplate<String, PurchaseVerificationResultDto> kafkaTemplate;
 
     public void executePurchase(PurchaseDto purchase) {
-        BigDecimal totalPrice = new BigDecimal(0);
+        final BigDecimal[] totalPrice = {new BigDecimal(0)};
 
-        boolean areProductsAvailable = purchase.getProducts().stream().noneMatch(productId -> {
+        Map<String, Long> productsRepeatingCount = new HashMap<>();
+        AtomicBoolean hasProductsUnavailable = new AtomicBoolean(false);
+
+        purchase.getProducts().forEach(productId -> {
             Product product = productRepository.findById(Long.parseLong(productId)).orElse(null);
-            if (product == null || product.getAmount() <= 0) {
-                return true;
+            if(product == null || product.getAmount() <= 0){
+                hasProductsUnavailable.set(true);
+            } else {
+                Long count = productsRepeatingCount.get(productId);
+                totalPrice[0] = totalPrice[0].add(product.getPrice());
+
+                if(count == null){
+                    productsRepeatingCount.put(productId, Long.parseLong("1"));
+                } else {
+                    productsRepeatingCount.put(productId, count+1);
+                }
             }
-            product.setAmount(product.getAmount()-1);
-            productRepository.save(product);
-            return false;
         });
 
         PurchaseVerificationResultDto result =
                 new PurchaseVerificationResultDto(
-                        totalPrice,
+                        totalPrice[0],
                         purchase.getId()
                 );
 
-        if (areProductsAvailable) {
+        if (!hasProductsUnavailable.get() && updateProductsAmount(productsRepeatingCount) == 0) {
             result.setResult(PurchaseVerificationResult.APPROVED);
             sendVerificationResponse(purchase.getId().toString(),result);
         } else {
@@ -50,10 +63,37 @@ public class InventoryService {
         }
     }
 
+    private Integer updateProductsAmount(Map<String, Long> productsRepeatingCount){
+
+        List<Boolean> validations = new ArrayList<>();
+
+        for (Map.Entry<String, Long> entry : productsRepeatingCount.entrySet()) {
+            Product product = this.productRepository.findById(Long.valueOf(entry.getKey())).orElse(null);
+            assert product != null;
+            if(product.getAmount() < entry.getValue()){
+               validations.add(false);
+            } else {
+                validations.add(true);
+            }
+        }
+
+        if(validations.contains(false)){
+            return 1;
+        }else{
+            for (Map.Entry<String, Long> entry : productsRepeatingCount.entrySet()) {
+                Product product = this.productRepository.findById(Long.valueOf(entry.getKey())).orElse(null);
+                assert product != null;
+                product.setAmount(product.getAmount()-entry.getValue());
+                this.productRepository.save(product);
+            }
+        }
+
+        return 0;
+    }
+
     private void sendVerificationResponse(String id, PurchaseVerificationResultDto result) {
         kafkaTemplate.send("PURCHASE-VERIFICATION", id, result);
     }
-
 
     public Page<Product> getAll(Pageable pageable) {
         return productRepository.findAll(pageable);
