@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 
 @RestController
@@ -28,6 +29,7 @@ public class InventoryController {
     }
 
     @PostMapping
+    @RolesAllowed({"product_management"})
     public ResponseEntity<?> create(@RequestBody @Valid ProductDto dto){
         Product product = inventoryService.create(dto);
 
@@ -35,6 +37,7 @@ public class InventoryController {
     }
 
     @PutMapping("{id}")
+    @RolesAllowed({"product_management"})
     public ResponseEntity<?> update(@RequestBody @Valid ProductDto dto,
                                     @PathVariable(required = true, value = "id") Long id){
         Product product = inventoryService.update(id, dto);
@@ -43,7 +46,8 @@ public class InventoryController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<?> create(@PathVariable(required = true, value = "id") Long id){
+    @RolesAllowed({"product_management"})
+    public ResponseEntity<?> delete(@PathVariable(required = true, value = "id") Long id){
         Integer response = inventoryService.delete(id);
 
         return response == 0 ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
