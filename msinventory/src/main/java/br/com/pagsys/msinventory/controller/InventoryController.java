@@ -8,7 +8,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.oauth2.jwt.Jwt;
 
 import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
@@ -48,6 +51,8 @@ public class InventoryController {
     @DeleteMapping("{id}")
     @RolesAllowed({"product_management"})
     public ResponseEntity<?> delete(@PathVariable(required = true, value = "id") Long id){
+
+
         Integer response = inventoryService.delete(id);
 
         return response == 0 ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();

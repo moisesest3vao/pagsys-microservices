@@ -24,10 +24,9 @@ public class PaymentController {
     }
 
     @GetMapping("/order")
-    public ResponseEntity<?> create(@RequestBody @Valid PurchaseDto purchaseDto, HttpServletRequest request){
+    public ResponseEntity<?> create(@RequestBody @Valid PurchaseDto purchaseDto){
 
-        String authorization = request.getHeader("authorization");
-        PurchaseDto order = this.purchaseService.create(purchaseDto, authorization);
+        PurchaseDto order = this.purchaseService.create(purchaseDto);
 
         if(order != null){
             this.purchaseService.sendInformationToInventory(order);

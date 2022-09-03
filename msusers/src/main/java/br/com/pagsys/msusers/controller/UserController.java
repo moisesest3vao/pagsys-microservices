@@ -19,15 +19,10 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
-
-    @Autowired
-    private KeycloakUserService keycloakUserService;
     @Autowired
     private UserService userService;
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
-
-
 
     @PostMapping(value = "/register")
     public ResponseEntity<?> createUser(@RequestBody User request) {
@@ -53,25 +48,4 @@ public class UserController {
         }
         return ResponseEntity.badRequest().build();
     }
-
-    @GetMapping("/getcurrent")
-    public ResponseEntity<GetUserByTokenResponse> getUserByToken(HttpServletRequest request){
-        String authorization = request.getHeader("authorization");
-        GetUserByTokenResponse getUserByTokenResponse = null;
-
-        if(StringUtil.isTokenFormatValid(authorization)){
-            getUserByTokenResponse = this.keycloakUserService.readUserByToken(authorization);
-        }
-
-        return getUserByTokenResponse != null ? ResponseEntity.ok(getUserByTokenResponse) : ResponseEntity.notFound().build();
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getUserByToken(@PathVariable String id){
-        log.info("trying to find user with sub "+id);
-        UserRepresentation userRepresentation = this.keycloakUserService.readUserBySub(id);
-
-        return userRepresentation != null ? ResponseEntity.ok(userRepresentation) : ResponseEntity.notFound().build();
-    }
-
 }

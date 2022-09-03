@@ -1,9 +1,7 @@
 package br.com.pagsys.payment.service;
 
-import br.com.pagsys.payment.clients.UserClient;
 import br.com.pagsys.payment.dto.PurchaseDto;
 import br.com.pagsys.payment.dto.PurchaseVerificationResultDto;
-import br.com.pagsys.payment.dto.UserDto;
 import br.com.pagsys.payment.enums.EmailType;
 import br.com.pagsys.payment.enums.PurchaseStatus;
 import br.com.pagsys.payment.model.Purchase;
@@ -12,6 +10,8 @@ import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,27 +20,25 @@ public class PurchaseService {
     @Autowired
     private PurchaseRepository purchaseRepository;
     @Autowired
-    private UserClient userClient;
-    @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
     @Autowired
     private KafkaTemplate<String, PurchaseDto> kafkaTemplatePurchase;
 
-    public PurchaseDto create( PurchaseDto dto, String authorization){
-        try{
-            log.info("calling users microservice for getting the user by token");
-            UserDto userByToken = userClient.getUserByToken(authorization);
+    public PurchaseDto create( PurchaseDto dto){
+        Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-            if(userByToken != null){
-                Purchase purchase = Purchase.build(dto, userByToken);
-                Purchase save = purchaseRepository.save(purchase);
+        if(jwt != null){
+            String userId = jwt.getClaims().get("sub").toString();
+            String userEmail = jwt.getClaims().get("email").toString();
+            System.out.println(userEmail);
+            System.out.println(userId);
 
-                kafkaTemplate.send("NEW-PURCHASE", userByToken.getEmail(), EmailType.PROCESSING_PURCHASE.value);
+            Purchase purchase = Purchase.build(dto, userId, userEmail);
+            Purchase save = purchaseRepository.save(purchase);
 
-                return new PurchaseDto(save);
-            }
-        }catch (FeignException.FeignClientException e){
-            log.error("an error occurred while calling the users microservice");
+            kafkaTemplate.send("NEW-PURCHASE", userEmail, EmailType.PROCESSING_PURCHASE.value);
+
+            return new PurchaseDto(save);
         }
         return null;
     }
@@ -54,19 +52,19 @@ public class PurchaseService {
         Purchase purchase = purchaseRepository.findById(Long.parseLong(purchaseId)).orElse(null);
         if(purchase != null){
             try{
-                UserDto userById = userClient.getUserBySub(purchase.getUser());
+                String userEmail = purchase.getUserEmail();
 
                 switch (validationResult.getResult().toString()){
                     case "DENIED" -> {
-                        log.info("failed purchase verification for "+userById.getEmail());
+                        log.info("failed purchase verification for "+userEmail);
                         doErrorTreatment(purchase);
-                        kafkaTemplate.send("NEW-PURCHASE", userById.getEmail() ,EmailType.FAILED_PURCHASE.value);
+                        kafkaTemplate.send("NEW-PURCHASE", userEmail ,EmailType.FAILED_PURCHASE.value);
                     }
                     case "APPROVED" -> {
-                        log.info("success purchase verification for "+userById.getEmail());
+                        log.info("success purchase verification for "+userEmail);
 
                         doSuccessTreatment(purchase);
-                        kafkaTemplate.send("NEW-PURCHASE", userById.getEmail(), EmailType.SUCCESS_PURCHASE.value);
+                        kafkaTemplate.send("NEW-PURCHASE", userEmail, EmailType.SUCCESS_PURCHASE.value);
                     }
                 }
             }catch (FeignException.FeignClientException e){

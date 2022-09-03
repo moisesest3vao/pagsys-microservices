@@ -1,4 +1,4 @@
-package br.com.pagsys.payment.kafka;
+package br.com.pagsys.payment.config.kafka;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;

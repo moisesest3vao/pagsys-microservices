@@ -1,4 +1,4 @@
-package br.com.pagsys.payment.kafka;
+package br.com.pagsys.payment.config.kafka;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;

@@ -80,15 +80,4 @@ public class KeycloakUserService {
         }
         return null;
     }
-
-
-    public UserRepresentation readUserBySub(String id) {
-        UserRepresentation user = keyCloakManager.getKeyCloakInstanceWithRealm().users().get(id).toRepresentation();
-        if(user != null){
-            return user;
-        }
-        log.info("user not found");
-
-        return null;
-    }
 }

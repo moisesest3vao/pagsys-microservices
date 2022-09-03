@@ -1,4 +1,4 @@
-package br.com.pagsys.payment.kafka;
+package br.com.pagsys.payment.config.kafka;
 
 import br.com.pagsys.payment.dto.PurchaseVerificationResultDto;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

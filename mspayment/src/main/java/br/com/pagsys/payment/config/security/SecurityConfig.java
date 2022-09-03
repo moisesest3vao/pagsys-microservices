@@ -1,4 +1,4 @@
-package br.com.pagsys.msinventory.config.security;
+package br.com.pagsys.payment.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,14 +15,15 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(jsr250Enabled = true)
 public class SecurityConfig {
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .anyRequest().authenticated()
+                .anyRequest().authenticated()
                 .and()
-                    .oauth2ResourceServer()
-                        .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()));
+                .oauth2ResourceServer()
+                .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()));
 
         return http.build();
     }
@@ -33,5 +34,4 @@ public class SecurityConfig {
 
         return jwtAuthenticationConverter;
     }
-
 }
