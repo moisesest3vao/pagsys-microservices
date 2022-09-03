@@ -7,7 +7,6 @@ import br.com.pagsys.msinventory.enums.PurchaseVerificationResult;
 import br.com.pagsys.msinventory.model.Product;
 import br.com.pagsys.msinventory.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

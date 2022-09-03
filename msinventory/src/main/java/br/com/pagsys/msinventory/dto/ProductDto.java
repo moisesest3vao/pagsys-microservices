@@ -1,7 +1,6 @@
 package br.com.pagsys.msinventory.dto;
 
 import br.com.pagsys.msinventory.enums.Category;
-import br.com.pagsys.msinventory.model.Product;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

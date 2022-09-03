@@ -25,11 +25,6 @@ spring:
       host: localhost
       port: 27017
       database: inventory
-  datasource:
-    url: jdbc:mysql://localhost:3306/inventory?createDatabaseIfNotExist=true
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
   kafka:
     bootstrap-servers: localhost:9092
 
