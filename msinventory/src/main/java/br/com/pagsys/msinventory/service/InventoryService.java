@@ -7,6 +7,7 @@ import br.com.pagsys.msinventory.enums.PurchaseVerificationResult;
 import br.com.pagsys.msinventory.model.Product;
 import br.com.pagsys.msinventory.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -31,10 +32,11 @@ public class InventoryService {
 
         Map<String, Long> productsRepeatingCount = new HashMap<>();
         AtomicBoolean hasProductsUnavailable = new AtomicBoolean(false);
-
+        purchase.getProducts().stream().forEach(System.out::println);
         purchase.getProducts().forEach(productId -> {
-            Product product = productRepository.findById(Long.parseLong(productId)).orElse(null);
+            Product product = productRepository.findById(productId).orElse(null);
             if(product == null || product.getAmount() <= 0){
+                log.info("product was not found");
                 hasProductsUnavailable.set(true);
             } else {
                 Long count = productsRepeatingCount.get(productId);
@@ -68,9 +70,10 @@ public class InventoryService {
         List<Boolean> validations = new ArrayList<>();
 
         for (Map.Entry<String, Long> entry : productsRepeatingCount.entrySet()) {
-            Product product = this.productRepository.findById(Long.valueOf(entry.getKey())).orElse(null);
+            Product product = this.productRepository.findById(entry.getKey()).orElse(null);
             assert product != null;
             if(product.getAmount() < entry.getValue()){
+                log.info("insufficient amount of products for this purchase");
                validations.add(false);
             } else {
                 validations.add(true);
@@ -81,7 +84,7 @@ public class InventoryService {
             return 1;
         }else{
             for (Map.Entry<String, Long> entry : productsRepeatingCount.entrySet()) {
-                Product product = this.productRepository.findById(Long.valueOf(entry.getKey())).orElse(null);
+                Product product = this.productRepository.findById(entry.getKey()).orElse(null);
                 assert product != null;
                 product.setAmount(product.getAmount()-entry.getValue());
                 this.productRepository.save(product);
@@ -104,7 +107,7 @@ public class InventoryService {
         return this.productRepository.save(product);
     }
 
-    public Product update(Long id, ProductDto dto) {
+    public Product update(String id, ProductDto dto) {
         Product product = this.productRepository.findById(id).orElse(null);
         if(product != null){
             product.update(dto);
@@ -114,7 +117,7 @@ public class InventoryService {
         return null;
     }
 
-    public Integer delete(Long id) {
+    public Integer delete(String id) {
         Product product = this.productRepository.findById(id).orElse(null);
         if(product != null){
             this.productRepository.delete(product);
@@ -122,5 +125,9 @@ public class InventoryService {
             return 0;
         }
         return 1;
+    }
+
+    public Product getById(String id) {
+        return this.productRepository.findById(id).orElse(null);
     }
 }

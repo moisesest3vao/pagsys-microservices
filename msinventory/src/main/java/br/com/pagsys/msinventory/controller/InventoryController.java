@@ -8,10 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.security.oauth2.jwt.Jwt;
 
 import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
@@ -31,6 +28,14 @@ public class InventoryController {
         return ResponseEntity.ok(productsPage);
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<?> getById(@PathVariable(required = true, value = "id") String id){
+
+        Product product = inventoryService.getById(id);
+
+        return product != null ? ResponseEntity.ok(product) : ResponseEntity.notFound().build();
+    }
+
     @PostMapping
     @RolesAllowed({"product_management"})
     public ResponseEntity<?> create(@RequestBody @Valid ProductDto dto){
@@ -42,7 +47,7 @@ public class InventoryController {
     @PutMapping("{id}")
     @RolesAllowed({"product_management"})
     public ResponseEntity<?> update(@RequestBody @Valid ProductDto dto,
-                                    @PathVariable(required = true, value = "id") Long id){
+                                    @PathVariable(required = true, value = "id") String id){
         Product product = inventoryService.update(id, dto);
 
         return product!= null? ResponseEntity.ok(product): ResponseEntity.notFound().build();
@@ -50,7 +55,7 @@ public class InventoryController {
 
     @DeleteMapping("{id}")
     @RolesAllowed({"product_management"})
-    public ResponseEntity<?> delete(@PathVariable(required = true, value = "id") Long id){
+    public ResponseEntity<?> delete(@PathVariable(required = true, value = "id") String id){
 
 
         Integer response = inventoryService.delete(id);

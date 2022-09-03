@@ -4,18 +4,22 @@ import br.com.pagsys.msinventory.dto.ProductDto;
 import br.com.pagsys.msinventory.enums.Category;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 
-@Entity
 @NoArgsConstructor
 @Data
+@Document(collection = "product")
 public class Product {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @MongoId(value = FieldType.OBJECT_ID)
     @Id
-    private Long id;
+    String id;
     private String name;
     @Enumerated(EnumType.STRING)
     private Category category;
