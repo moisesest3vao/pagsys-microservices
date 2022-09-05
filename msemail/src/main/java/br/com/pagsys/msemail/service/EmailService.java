@@ -1,23 +1,30 @@
 package br.com.pagsys.msemail.service;
 
+import br.com.pagsys.msemail.enums.EmailType;
+import br.com.pagsys.msemail.model.Email;
+import br.com.pagsys.msemail.repository.EmailRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 @Slf4j
 public class EmailService {
     @Autowired
     private final JavaMailSender javaMailSender;
+    @Autowired
+    private EmailRepository emailRepository;
 
     public EmailService(JavaMailSender javaMailSender) {
         this.javaMailSender = javaMailSender;
     }
 
     public void sendJoinerEmail(String email) {
-        this.send(email,
+        this.send(email, EmailType.JOINER,
                 "Welcome to PagSys: hope you enjoy it",
                 """
                         Hello new User\s
@@ -29,7 +36,7 @@ public class EmailService {
 
     public void sendLeaverEmail(String email) {
         this.send(email,
-                "See you, PagSys: It's never a goodbye",
+                EmailType.LEAVER, "See you, PagSys: It's never a goodbye",
                 """
                         Hello ex-user\s
 
@@ -40,7 +47,7 @@ public class EmailService {
 
     public void sendFailedPurchase(String email) {
         this.send(email,
-                "PagSys: We had an issue with your purchase",
+                EmailType.FAILED_PURCHASE, "PagSys: We had an issue with your purchase",
                 """
                         Hello user\s
 
@@ -51,7 +58,7 @@ public class EmailService {
 
     public void sendSuccessPurchase(String email) {
         this.send(email,
-                "PagSys: Thank you for your purchase",
+                EmailType.SUCCESS_PURCHASE, "PagSys: Thank you for your purchase",
                 """
                         Hello user\s
 
@@ -62,7 +69,7 @@ public class EmailService {
 
     public void sendProcessingPurchase(String email) {
         this.send(email,
-                "PagSys: We're on it",
+                EmailType.PROCESSING_PURCHASE, "PagSys: We're on it",
                 """
                         Hello user\s
 
@@ -71,8 +78,9 @@ public class EmailService {
         );
     }
 
-    private void send(String to, String subject, String text){
-        log.info("trying to send email");
+    private void send(String to, EmailType type, String subject, String text){
+
+        this.emailRepository.save(new Email(type, to, new Date()));
 
         var mail = new SimpleMailMessage();
         mail.setTo(to);

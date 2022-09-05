@@ -19,7 +19,7 @@ spring:
   application:
     name: mspayment
   datasource:
-    url: jdbc:mysql://localhost:3306/purchases
+    url: jdbc:mysql://localhost:3306/purchases?createDatabaseIfNotExist=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver

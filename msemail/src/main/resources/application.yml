@@ -2,13 +2,14 @@ spring:
   application:
     name: msemail
   datasource:
-    url: jdbc:mysql://localhost:3306/email
-    username: root
+    url: jdbc:postgresql://localhost:5432/email?createDatabaseIfNotExist=true
+    username: postgres
     password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
   kafka:
     bootstrap-servers: localhost:9092
