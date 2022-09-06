@@ -1,0 +1,686 @@
+2022-09-05 23:08:40.249  INFO 24560 --- [restartedMain] b.c.p.m.MsinventoryApplication           : Starting MsinventoryApplication using Java 18.0.2 on DESKTOP-4RLSD2D with PID 24560 (C:\Users\moise\OneDrive\Documentos\git\pagsys\msinventory\target\classes started by moise in C:\Users\moise\OneDrive\Documentos\git\pagsys\msinventory)
+2022-09-05 23:08:40.251  INFO 24560 --- [restartedMain] b.c.p.m.MsinventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-09-05 23:08:40.343  INFO 24560 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-05 23:08:40.344  INFO 24560 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-05 23:08:42.340  INFO 24560 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-09-05 23:08:42.343  INFO 24560 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-09-05 23:08:42.527  INFO 24560 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 162 ms. Found 1 MongoDB repository interfaces.
+2022-09-05 23:08:43.537  INFO 24560 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ccb2b0d0-f72f-37b0-9f52-0656236ec16b
+2022-09-05 23:08:44.682  INFO 24560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-09-05 23:08:44.704  INFO 24560 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-05 23:08:44.704  INFO 24560 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 23:08:44.953  INFO 24560 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-05 23:08:44.953  INFO 24560 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4608 ms
+2022-09-05 23:08:46.104  INFO 24560 --- [restartedMain] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/18.0.2+9-61"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@5634f7f7], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@1c4c1d20]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@1a441f98], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-09-05 23:08:46.118  INFO 24560 --- [cluster-rtt-ClusterId{value='6316abae55eefe54a95fd471', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:19}] to localhost:27017
+2022-09-05 23:08:46.119  INFO 24560 --- [cluster-ClusterId{value='6316abae55eefe54a95fd471', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:18}] to localhost:27017
+2022-09-05 23:08:46.120  INFO 24560 --- [cluster-ClusterId{value='6316abae55eefe54a95fd471', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=27907100}
+2022-09-05 23:08:46.244  WARN 24560 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-09-05 23:08:46.404  INFO 24560 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-05 23:08:46.480  WARN 24560 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-09-05 23:08:47.081  INFO 24560 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@65eb4fd5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d945fdc, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a795402, org.springframework.security.web.header.HeaderWriterFilter@7057460f, org.springframework.security.web.csrf.CsrfFilter@66afaa46, org.springframework.security.web.authentication.logout.LogoutFilter@2fb76ff2, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@1f41d16f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46358d10, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@670b1d02, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c4f35a8, org.springframework.security.web.session.SessionManagementFilter@6fbd7573, org.springframework.security.web.access.ExceptionTranslationFilter@5a7aca24, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@69c66120]
+2022-09-05 23:08:48.059  INFO 24560 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-09-05 23:08:48.144  WARN 24560 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-09-05 23:08:48.154  INFO 24560 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2022-09-05 23:08:48.509  INFO 24560 --- [restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-groupId-1-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = groupId-1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2022-09-05 23:08:48.701  INFO 24560 --- [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-09-05 23:08:48.702  INFO 24560 --- [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-09-05 23:08:48.702  INFO 24560 --- [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1662430128699
+2022-09-05 23:08:48.707  INFO 24560 --- [restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Subscribed to topic(s): TRY-TO-PURCHASE
+2022-09-05 23:08:48.800  INFO 24560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 59551 (http) with context path ''
+2022-09-05 23:08:48.801  INFO 24560 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 59551
+2022-09-05 23:08:48.808  INFO 24560 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-09-05 23:08:48.864  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-09-05 23:08:48.869  INFO 24560 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:08:48.899  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-09-05 23:08:48.899  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-09-05 23:08:48.899  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-09-05 23:08:48.900  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-09-05 23:08:48.900  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-09-05 23:08:48.900  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-09-05 23:08:48.900  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-09-05 23:08:49.517  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-09-05 23:08:49.520  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-09-05 23:08:49.523  INFO 24560 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-09-05 23:08:49.527  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1662430129526 with initial instances count: 2
+2022-09-05 23:08:49.530  INFO 24560 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MSINVENTORY with eureka with status UP
+2022-09-05 23:08:49.530  INFO 24560 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1662430129530, current=UP, previous=STARTING]
+2022-09-05 23:08:49.532  INFO 24560 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:b7082e8ba272a79d8f0ed6f2110ae3ea: registering service...
+2022-09-05 23:08:49.635  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Resetting the last seen epoch of partition TRY-TO-PURCHASE-0 to 0 since the associated topicId changed from null to KMdTcCQfS8-KY7Ta_pnWbg
+2022-09-05 23:08:49.637  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Cluster ID: hH3JrgQ7R6GL7iStE4oavw
+2022-09-05 23:08:49.639  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2022-09-05 23:08:49.640  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:08:49.684  INFO 24560 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:b7082e8ba272a79d8f0ed6f2110ae3ea - registration status: 204
+2022-09-05 23:08:49.690  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: need to re-join with the given member-id
+2022-09-05 23:08:49.690  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:08:49.719  INFO 24560 --- [restartedMain] b.c.p.m.MsinventoryApplication           : Started MsinventoryApplication in 10.243 seconds (JVM running for 11.497)
+2022-09-05 23:08:51.638  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=186, memberId='consumer-groupId-1-1-dc2e1d9b-5fa3-4199-89c8-d584750bb88e', protocol='range'}
+2022-09-05 23:08:51.711  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=186, memberId='consumer-groupId-1-1-dc2e1d9b-5fa3-4199-89c8-d584750bb88e', protocol='range'}
+2022-09-05 23:08:51.714  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:08:51.717  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:08:51.751  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:08:51.864  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:09:09.694  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:09:09.695  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:09:09.696  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:09:09.697  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:09:09.712  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=187, memberId='consumer-groupId-1-1-dc2e1d9b-5fa3-4199-89c8-d584750bb88e', protocol='range'}
+2022-09-05 23:09:09.720  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=187, memberId='consumer-groupId-1-1-dc2e1d9b-5fa3-4199-89c8-d584750bb88e', protocol='range'}
+2022-09-05 23:09:09.722  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:09:09.722  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:09:09.746  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:09:09.746  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:09:14.301  INFO 24560 --- [http-nio-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-05 23:09:14.302  INFO 24560 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-05 23:09:14.304  INFO 24560 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-09-05 23:09:14.582  WARN 24560 --- [http-nio-auto-1-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [174] milliseconds.
+2022-09-05 23:10:52.409  INFO 24560 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MSINVENTORY with eureka with status DOWN
+2022-09-05 23:10:52.409  INFO 24560 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1662430252409, current=DOWN, previous=UP]
+2022-09-05 23:10:52.410  INFO 24560 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:b7082e8ba272a79d8f0ed6f2110ae3ea: registering service...
+2022-09-05 23:10:52.414  INFO 24560 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:b7082e8ba272a79d8f0ed6f2110ae3ea - registration status: 204
+2022-09-05 23:10:52.477  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:10:52.478  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:10:52.478  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Member consumer-groupId-1-1-dc2e1d9b-5fa3-4199-89c8-d584750bb88e sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2022-09-05 23:10:52.478  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-05 23:10:52.479  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: consumer pro-actively leaving the group
+2022-09-05 23:10:52.479  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Unsubscribed all topics or patterns and assigned partitions
+2022-09-05 23:10:52.480  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-05 23:10:52.480  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: consumer pro-actively leaving the group
+2022-09-05 23:10:52.497  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2022-09-05 23:10:52.499  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-05 23:10:52.500  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2022-09-05 23:10:52.514  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-groupId-1-1 unregistered
+2022-09-05 23:10:52.516  INFO 24560 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: Consumer stopped
+2022-09-05 23:10:52.655  INFO 24560 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-09-05 23:10:56.085  INFO 24560 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-09-05 23:10:56.133  INFO 24560 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:b7082e8ba272a79d8f0ed6f2110ae3ea - deregister  status: 200
+2022-09-05 23:10:56.140  INFO 24560 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-09-05 23:11:02.388  INFO 24736 --- [restartedMain] b.c.p.m.MsinventoryApplication           : Starting MsinventoryApplication using Java 18.0.2 on DESKTOP-4RLSD2D with PID 24736 (C:\Users\moise\OneDrive\Documentos\git\pagsys\msinventory\target\classes started by moise in C:\Users\moise\OneDrive\Documentos\git\pagsys\msinventory)
+2022-09-05 23:11:02.390  INFO 24736 --- [restartedMain] b.c.p.m.MsinventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-09-05 23:11:02.465  INFO 24736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-05 23:11:02.465  INFO 24736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-05 23:11:04.292  INFO 24736 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-09-05 23:11:04.293  INFO 24736 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-09-05 23:11:04.541  INFO 24736 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 242 ms. Found 1 MongoDB repository interfaces.
+2022-09-05 23:11:05.420  INFO 24736 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ccb2b0d0-f72f-37b0-9f52-0656236ec16b
+2022-09-05 23:11:08.191  INFO 24736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-09-05 23:11:08.207  INFO 24736 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-05 23:11:08.209  INFO 24736 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 23:11:08.597  INFO 24736 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-05 23:11:08.597  INFO 24736 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6131 ms
+2022-09-05 23:11:09.407  INFO 24736 --- [restartedMain] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/18.0.2+9-61"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@6b4fc8e6], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@15157871]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@47890953], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-09-05 23:11:09.441  INFO 24736 --- [cluster-rtt-ClusterId{value='6316ac3d34a46f7264a7e23d', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:20}] to localhost:27017
+2022-09-05 23:11:09.461  INFO 24736 --- [cluster-ClusterId{value='6316ac3d34a46f7264a7e23d', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:21}] to localhost:27017
+2022-09-05 23:11:09.461  INFO 24736 --- [cluster-ClusterId{value='6316ac3d34a46f7264a7e23d', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=48119000}
+2022-09-05 23:11:09.531  WARN 24736 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-09-05 23:11:09.721  INFO 24736 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-05 23:11:09.772  WARN 24736 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-09-05 23:11:10.277  INFO 24736 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4c6ee3ab, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17679b1a, org.springframework.security.web.context.SecurityContextPersistenceFilter@697679fa, org.springframework.security.web.header.HeaderWriterFilter@487d5415, org.springframework.security.web.csrf.CsrfFilter@1e7c55ae, org.springframework.security.web.authentication.logout.LogoutFilter@43f87cf0, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@1bab704, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@42bd09b2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38822d27, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@43b11c65, org.springframework.security.web.session.SessionManagementFilter@2bc9dbd7, org.springframework.security.web.access.ExceptionTranslationFilter@7323a020, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@535920d9]
+2022-09-05 23:11:12.276  INFO 24736 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-09-05 23:11:12.382  WARN 24736 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-09-05 23:11:12.406  INFO 24736 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2022-09-05 23:11:12.623  INFO 24736 --- [restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-groupId-1-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = groupId-1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2022-09-05 23:11:12.814  INFO 24736 --- [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-09-05 23:11:12.816  INFO 24736 --- [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-09-05 23:11:12.816  INFO 24736 --- [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1662430272813
+2022-09-05 23:11:12.820  INFO 24736 --- [restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Subscribed to topic(s): TRY-TO-PURCHASE
+2022-09-05 23:11:12.852  INFO 24736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 49461 (http) with context path ''
+2022-09-05 23:11:12.856  INFO 24736 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 49461
+2022-09-05 23:11:12.862  INFO 24736 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-09-05 23:11:12.919  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-09-05 23:11:12.930  INFO 24736 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:11:12.959  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-09-05 23:11:12.960  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-09-05 23:11:12.960  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-09-05 23:11:12.960  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-09-05 23:11:12.960  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-09-05 23:11:12.960  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-09-05 23:11:12.960  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-09-05 23:11:13.468  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-09-05 23:11:13.470  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-09-05 23:11:13.473  INFO 24736 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-09-05 23:11:13.480  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1662430273478 with initial instances count: 4
+2022-09-05 23:11:13.483  INFO 24736 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MSINVENTORY with eureka with status UP
+2022-09-05 23:11:13.484  INFO 24736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1662430273484, current=UP, previous=STARTING]
+2022-09-05 23:11:13.485  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Resetting the last seen epoch of partition TRY-TO-PURCHASE-0 to 0 since the associated topicId changed from null to KMdTcCQfS8-KY7Ta_pnWbg
+2022-09-05 23:11:13.487  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Cluster ID: hH3JrgQ7R6GL7iStE4oavw
+2022-09-05 23:11:13.488  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2022-09-05 23:11:13.491  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:11:13.492  INFO 24736 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:e0cdb8129f672bfd3e04ddd6b03ece3d: registering service...
+2022-09-05 23:11:13.591  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: need to re-join with the given member-id
+2022-09-05 23:11:13.591  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:11:13.618  INFO 24736 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:e0cdb8129f672bfd3e04ddd6b03ece3d - registration status: 204
+2022-09-05 23:11:13.622  INFO 24736 --- [restartedMain] b.c.p.m.MsinventoryApplication           : Started MsinventoryApplication in 11.911 seconds (JVM running for 13.269)
+2022-09-05 23:11:16.372  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=189, memberId='consumer-groupId-1-1-2164e7dd-1460-4e4c-87f5-5f7136ae52b7', protocol='range'}
+2022-09-05 23:11:16.757  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=189, memberId='consumer-groupId-1-1-2164e7dd-1460-4e4c-87f5-5f7136ae52b7', protocol='range'}
+2022-09-05 23:11:16.761  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:11:16.767  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:11:16.824  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:11:16.825  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:11:28.753  INFO 24736 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MSINVENTORY with eureka with status DOWN
+2022-09-05 23:11:28.755  INFO 24736 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1662430288755, current=DOWN, previous=UP]
+2022-09-05 23:11:28.759  INFO 24736 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:e0cdb8129f672bfd3e04ddd6b03ece3d: registering service...
+2022-09-05 23:11:28.766  INFO 24736 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:e0cdb8129f672bfd3e04ddd6b03ece3d - registration status: 204
+2022-09-05 23:11:28.809  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:11:28.809  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:11:28.810  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Member consumer-groupId-1-1-2164e7dd-1460-4e4c-87f5-5f7136ae52b7 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2022-09-05 23:11:28.811  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-05 23:11:28.811  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: consumer pro-actively leaving the group
+2022-09-05 23:11:28.811  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Unsubscribed all topics or patterns and assigned partitions
+2022-09-05 23:11:28.812  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Resetting generation due to: consumer pro-actively leaving the group
+2022-09-05 23:11:28.812  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: consumer pro-actively leaving the group
+2022-09-05 23:11:28.838  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2022-09-05 23:11:28.838  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-05 23:11:28.838  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2022-09-05 23:11:28.850  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-groupId-1-1 unregistered
+2022-09-05 23:11:28.851  INFO 24736 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: Consumer stopped
+2022-09-05 23:11:28.866  INFO 24736 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-09-05 23:11:31.896  INFO 24736 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-09-05 23:11:31.904  INFO 24736 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:e0cdb8129f672bfd3e04ddd6b03ece3d - deregister  status: 200
+2022-09-05 23:11:31.915  INFO 24736 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-09-05 23:11:36.728  INFO 21000 --- [restartedMain] b.c.p.m.MsinventoryApplication           : Starting MsinventoryApplication using Java 18.0.2 on DESKTOP-4RLSD2D with PID 21000 (C:\Users\moise\OneDrive\Documentos\git\pagsys\msinventory\target\classes started by moise in C:\Users\moise\OneDrive\Documentos\git\pagsys\msinventory)
+2022-09-05 23:11:36.731  INFO 21000 --- [restartedMain] b.c.p.m.MsinventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-09-05 23:11:36.802  INFO 21000 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-05 23:11:36.802  INFO 21000 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-05 23:11:38.671  INFO 21000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-09-05 23:11:38.672  INFO 21000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-09-05 23:11:38.822  INFO 21000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 145 ms. Found 1 MongoDB repository interfaces.
+2022-09-05 23:11:39.205  INFO 21000 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ccb2b0d0-f72f-37b0-9f52-0656236ec16b
+2022-09-05 23:11:40.192  INFO 21000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-09-05 23:11:40.210  INFO 21000 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-05 23:11:40.211  INFO 21000 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 23:11:40.411  INFO 21000 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-05 23:11:40.411  INFO 21000 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3608 ms
+2022-09-05 23:11:41.108  INFO 21000 --- [restartedMain] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/18.0.2+9-61"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@fa0895e], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@6e710dc0]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@6a79cb9d], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-09-05 23:11:41.218  INFO 21000 --- [cluster-ClusterId{value='6316ac5d37bd336c865de651', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:22}] to localhost:27017
+2022-09-05 23:11:41.220  INFO 21000 --- [cluster-rtt-ClusterId{value='6316ac5d37bd336c865de651', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:23}] to localhost:27017
+2022-09-05 23:11:41.219  INFO 21000 --- [cluster-ClusterId{value='6316ac5d37bd336c865de651', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=64716200}
+2022-09-05 23:11:41.263  WARN 21000 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-09-05 23:11:41.408  INFO 21000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-05 23:11:41.471  WARN 21000 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2022-09-05 23:11:42.255  INFO 21000 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e42c824, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58e33ea0, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e05bfa, org.springframework.security.web.header.HeaderWriterFilter@7cdcdf93, org.springframework.security.web.csrf.CsrfFilter@1c0abc8f, org.springframework.security.web.authentication.logout.LogoutFilter@48422017, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@48135816, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60e2bcaf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@528fd0f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ae20e42, org.springframework.security.web.session.SessionManagementFilter@7550d2ca, org.springframework.security.web.access.ExceptionTranslationFilter@2049f646, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7aa3ccde]
+2022-09-05 23:11:43.399  INFO 21000 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-09-05 23:11:43.528  WARN 21000 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-09-05 23:11:43.545  INFO 21000 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2022-09-05 23:11:43.775  INFO 21000 --- [restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-groupId-1-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = groupId-1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2022-09-05 23:11:43.999  INFO 21000 --- [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-09-05 23:11:44.000  INFO 21000 --- [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-09-05 23:11:44.001  INFO 21000 --- [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1662430303997
+2022-09-05 23:11:44.005  INFO 21000 --- [restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Subscribed to topic(s): TRY-TO-PURCHASE
+2022-09-05 23:11:44.047  INFO 21000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 49513 (http) with context path ''
+2022-09-05 23:11:44.048  INFO 21000 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 49513
+2022-09-05 23:11:44.054  INFO 21000 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-09-05 23:11:44.252  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-09-05 23:11:44.260  INFO 21000 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:11:44.301  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-09-05 23:11:44.301  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-09-05 23:11:44.301  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-09-05 23:11:44.301  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-09-05 23:11:44.301  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-09-05 23:11:44.302  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-09-05 23:11:44.304  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-09-05 23:11:44.721  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Resetting the last seen epoch of partition TRY-TO-PURCHASE-0 to 0 since the associated topicId changed from null to KMdTcCQfS8-KY7Ta_pnWbg
+2022-09-05 23:11:44.724  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Cluster ID: hH3JrgQ7R6GL7iStE4oavw
+2022-09-05 23:11:44.725  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2022-09-05 23:11:44.727  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:11:44.741  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: need to re-join with the given member-id
+2022-09-05 23:11:44.742  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:11:44.776  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-09-05 23:11:44.780  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-09-05 23:11:44.782  INFO 21000 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-09-05 23:11:44.787  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1662430304786 with initial instances count: 5
+2022-09-05 23:11:44.789  INFO 21000 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MSINVENTORY with eureka with status UP
+2022-09-05 23:11:44.792  INFO 21000 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1662430304792, current=UP, previous=STARTING]
+2022-09-05 23:11:44.794  INFO 21000 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:caa4db707ec3be7ef4c2623fcd48bdb2: registering service...
+2022-09-05 23:11:44.898  INFO 21000 --- [restartedMain] b.c.p.m.MsinventoryApplication           : Started MsinventoryApplication in 8.973 seconds (JVM running for 10.075)
+2022-09-05 23:11:44.961  INFO 21000 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSINVENTORY/msinventory:caa4db707ec3be7ef4c2623fcd48bdb2 - registration status: 204
+2022-09-05 23:11:46.636  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=191, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:11:47.093  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=191, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:11:47.097  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:11:47.099  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:11:47.118  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:11:47.119  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:12:22.763  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:12:22.764  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:12:22.764  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:12:22.764  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:12:22.767  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=192, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:12:22.966  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=192, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:12:22.967  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:12:22.967  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:12:22.974  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:12:22.974  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:12:45.079  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:12:45.080  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:12:45.080  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:12:45.080  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:12:45.083  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=193, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:12:45.091  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=193, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:12:45.092  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:12:45.092  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:12:45.099  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:12:45.100  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:14:05.929  INFO 21000 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-05 23:14:05.930  INFO 21000 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-05 23:14:05.932  INFO 21000 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-09-05 23:16:44.310  INFO 21000 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:16:51.782  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:16:51.782  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:16:51.783  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:16:51.783  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:16:51.791  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=194, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:16:52.062  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=194, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:16:52.063  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:16:52.063  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:16:52.150  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:16:52.151  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:17:15.985  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:17:15.985  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:17:15.985  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:17:15.985  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:17:16.082  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=195, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:17:16.105  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=195, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:17:16.105  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:17:16.105  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:17:16.127  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:17:16.128  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:19:43.636  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:19:43.637  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:19:43.637  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:19:43.637  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:19:43.663  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=196, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:19:44.162  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=196, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:19:44.162  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:19:44.162  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:19:44.176  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:19:44.177  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:20:35.456  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:20:35.457  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:20:35.458  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:20:35.458  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:20:35.571  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=197, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:20:35.887  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=197, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:20:35.887  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:20:35.887  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:20:35.893  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:20:35.893  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:20:44.927  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Node -1 disconnected.
+2022-09-05 23:21:44.318  INFO 21000 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:22:09.022  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:22:09.023  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:22:09.023  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:22:09.023  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:22:09.027  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=198, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:22:09.360  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=198, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:22:09.361  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:22:09.361  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:22:09.488  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:22:09.488  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:22:33.105  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:22:33.105  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:22:33.105  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:22:33.105  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:22:33.108  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=199, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:22:33.553  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=199, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:22:33.553  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:22:33.553  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:22:33.557  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:22:33.558  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:23:51.293  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:23:51.294  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:23:51.294  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:23:51.294  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:23:51.347  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=200, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:23:51.583  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=200, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:23:51.583  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:23:51.583  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:23:51.604  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:23:51.604  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:24:15.440  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:24:15.441  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:24:15.441  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:24:15.441  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:24:15.444  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=201, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:24:15.565  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=201, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:24:15.565  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:24:15.565  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:24:15.577  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:24:15.578  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:26:44.322  INFO 21000 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:29:04.440  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:29:04.440  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:29:04.440  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:29:04.441  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:29:04.447  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=202, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:29:04.549  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=202, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:29:04.550  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:29:04.550  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:29:04.580  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:29:04.580  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:29:25.483  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:29:25.483  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:29:25.483  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:29:25.483  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:29:25.534  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=203, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:29:25.706  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=203, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:29:25.707  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:29:25.707  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:29:25.725  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:29:25.726  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:30:46.741  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:30:46.742  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:30:46.742  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:30:46.742  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:30:46.754  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=204, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:30:47.255  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=204, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:30:47.256  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:30:47.256  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:30:47.261  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:30:47.261  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:31:07.797  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:31:07.797  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:31:07.797  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:31:07.798  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:31:07.801  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=205, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:31:08.141  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=205, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:31:08.141  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:31:08.141  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:31:08.145  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:31:08.145  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:31:44.325  INFO 21000 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:35:05.473  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:35:05.474  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:35:05.474  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:35:05.474  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:35:05.478  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=206, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:35:05.618  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=206, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:35:05.621  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:35:05.621  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:35:05.626  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:35:05.626  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]
+2022-09-05 23:35:32.596  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Request joining group due to: group is already rebalancing
+2022-09-05 23:35:32.597  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Revoke previously assigned partitions TRY-TO-PURCHASE-0
+2022-09-05 23:35:32.597  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions revoked: [TRY-TO-PURCHASE-0]
+2022-09-05 23:35:32.597  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] (Re-)joining group
+2022-09-05 23:35:32.603  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully joined group with generation Generation{generationId=207, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:35:32.778  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Successfully synced group in generation Generation{generationId=207, memberId='consumer-groupId-1-1-fba9b11b-e741-45c0-a1bf-fbeaf25143a9', protocol='range'}
+2022-09-05 23:35:32.778  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Notifying assignor about the new Assignment(partitions=[TRY-TO-PURCHASE-0])
+2022-09-05 23:35:32.778  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Adding newly assigned partitions: TRY-TO-PURCHASE-0
+2022-09-05 23:35:32.783  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-groupId-1-1, groupId=groupId-1] Setting offset for partition TRY-TO-PURCHASE-0 to the committed offset FetchPosition{offset=74, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2022-09-05 23:35:32.783  INFO 21000 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : groupId-1: partitions assigned: [TRY-TO-PURCHASE-0]

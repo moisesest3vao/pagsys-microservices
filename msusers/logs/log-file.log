@@ -1,0 +1,262 @@
+2022-09-05 23:09:16.576  INFO 2404 --- [main] b.com.pagsys.msusers.MsusersApplication  : Starting MsusersApplication using Java 18.0.2 on DESKTOP-4RLSD2D with PID 2404 (C:\Users\moise\OneDrive\Documentos\git\pagsys\msusers\target\classes started by moise in C:\Users\moise\OneDrive\Documentos\git\pagsys\msusers)
+2022-09-05 23:09:16.580  INFO 2404 --- [main] b.com.pagsys.msusers.MsusersApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-09-05 23:09:18.326  INFO 2404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-05 23:09:18.520  INFO 2404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 181 ms. Found 1 JPA repository interfaces.
+2022-09-05 23:09:18.981  INFO 2404 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4692d52b-fec1-3233-a818-d1644f3de8c4
+2022-09-05 23:09:19.745  INFO 2404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-09-05 23:09:19.757  INFO 2404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-05 23:09:19.757  INFO 2404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 23:09:20.041  INFO 2404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-05 23:09:20.041  INFO 2404 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3356 ms
+2022-09-05 23:09:20.785  INFO 2404 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 23:09:20.858  INFO 2404 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-05 23:09:21.140  INFO 2404 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-05 23:09:21.296  INFO 2404 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-05 23:09:21.670  INFO 2404 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-05 23:09:21.702  INFO 2404 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-05 23:09:22.568  INFO 2404 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 23:09:22.577  INFO 2404 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-05 23:09:23.632  WARN 2404 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-05 23:09:24.924  INFO 2404 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-09-05 23:09:25.016  WARN 2404 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-09-05 23:09:25.044  INFO 2404 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2022-09-05 23:09:25.122  INFO 2404 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-05 23:09:25.307  INFO 2404 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-09-05 23:09:25.308  INFO 2404 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-09-05 23:09:25.308  INFO 2404 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1662430165306
+2022-09-05 23:09:25.746  INFO 2404 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
+2022-09-05 23:09:25.752  INFO 2404 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2022-09-05 23:09:25.752  INFO 2404 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-05 23:09:25.752  INFO 2404 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2022-09-05 23:09:25.777  INFO 2404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 63680 (http) with context path ''
+2022-09-05 23:09:25.779  INFO 2404 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 63680
+2022-09-05 23:09:25.785  INFO 2404 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-09-05 23:09:25.873  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-09-05 23:09:25.880  INFO 2404 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:09:25.919  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-09-05 23:09:25.919  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-09-05 23:09:25.919  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-09-05 23:09:25.919  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-09-05 23:09:25.919  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-09-05 23:09:25.920  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-09-05 23:09:25.921  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-09-05 23:09:26.364  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-09-05 23:09:26.367  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-09-05 23:09:26.370  INFO 2404 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-09-05 23:09:26.376  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1662430166375 with initial instances count: 3
+2022-09-05 23:09:26.380  INFO 2404 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MSUSERS with eureka with status UP
+2022-09-05 23:09:26.381  INFO 2404 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1662430166381, current=UP, previous=STARTING]
+2022-09-05 23:09:26.389  INFO 2404 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSUSERS/msusers:31445e8e8e3c91fd1688550d84e32185: registering service...
+2022-09-05 23:09:26.531  INFO 2404 --- [main] b.com.pagsys.msusers.MsusersApplication  : Started MsusersApplication in 11.129 seconds (JVM running for 12.531)
+2022-09-05 23:09:26.568  INFO 2404 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSUSERS/msusers:31445e8e8e3c91fd1688550d84e32185 - registration status: 204
+2022-09-05 23:09:42.328  INFO 2404 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-05 23:09:42.330  INFO 2404 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-05 23:09:42.331  INFO 2404 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-09-05 23:11:03.053  INFO 2404 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MSUSERS with eureka with status DOWN
+2022-09-05 23:11:03.053  INFO 2404 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1662430263053, current=DOWN, previous=UP]
+2022-09-05 23:11:03.055  INFO 2404 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSUSERS/msusers:31445e8e8e3c91fd1688550d84e32185: registering service...
+2022-09-05 23:11:03.059  INFO 2404 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSUSERS/msusers:31445e8e8e3c91fd1688550d84e32185 - registration status: 204
+2022-09-05 23:11:03.091  INFO 2404 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-05 23:11:03.091  INFO 2404 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-05 23:11:03.108  INFO 2404 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-05 23:11:03.192  INFO 2404 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-05 23:11:03.194  INFO 2404 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-09-05 23:11:06.588  INFO 2404 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-09-05 23:11:06.592  INFO 2404 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSUSERS/msusers:31445e8e8e3c91fd1688550d84e32185 - deregister  status: 200
+2022-09-05 23:11:06.600  INFO 2404 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-09-05 23:11:17.499  INFO 24280 --- [main] b.com.pagsys.msusers.MsusersApplication  : Starting MsusersApplication using Java 18.0.2 on DESKTOP-4RLSD2D with PID 24280 (C:\Users\moise\OneDrive\Documentos\git\pagsys\msusers\target\classes started by moise in C:\Users\moise\OneDrive\Documentos\git\pagsys\msusers)
+2022-09-05 23:11:17.502  INFO 24280 --- [main] b.com.pagsys.msusers.MsusersApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-09-05 23:11:18.841  INFO 24280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-05 23:11:19.010  INFO 24280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157 ms. Found 1 JPA repository interfaces.
+2022-09-05 23:11:19.443  INFO 24280 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4692d52b-fec1-3233-a818-d1644f3de8c4
+2022-09-05 23:11:20.449  INFO 24280 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-09-05 23:11:20.461  INFO 24280 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-05 23:11:20.461  INFO 24280 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-05 23:11:20.759  INFO 24280 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-05 23:11:20.760  INFO 24280 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3195 ms
+2022-09-05 23:11:21.336  INFO 24280 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-05 23:11:21.426  INFO 24280 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-05 23:11:21.675  INFO 24280 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-05 23:11:21.834  INFO 24280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-05 23:11:22.318  INFO 24280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-05 23:11:22.365  INFO 24280 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-05 23:11:23.382  INFO 24280 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-05 23:11:23.392  INFO 24280 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-05 23:11:25.104  WARN 24280 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-05 23:11:26.857  INFO 24280 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-09-05 23:11:27.039  WARN 24280 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-09-05 23:11:27.078  INFO 24280 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2022-09-05 23:11:27.215  INFO 24280 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-09-05 23:11:27.418  INFO 24280 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.1
+2022-09-05 23:11:27.418  INFO 24280 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 97671528ba54a138
+2022-09-05 23:11:27.418  INFO 24280 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1662430287416
+2022-09-05 23:11:27.797  INFO 24280 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
+2022-09-05 23:11:27.801  INFO 24280 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2022-09-05 23:11:27.801  INFO 24280 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-09-05 23:11:27.801  INFO 24280 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2022-09-05 23:11:27.823  INFO 24280 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 49489 (http) with context path ''
+2022-09-05 23:11:27.825  INFO 24280 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 49489
+2022-09-05 23:11:27.831  INFO 24280 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-09-05 23:11:27.885  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-09-05 23:11:27.890  INFO 24280 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:11:27.952  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-09-05 23:11:27.953  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-09-05 23:11:27.953  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-09-05 23:11:27.953  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-09-05 23:11:27.953  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-09-05 23:11:27.956  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-09-05 23:11:27.956  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-09-05 23:11:28.460  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-09-05 23:11:28.483  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-09-05 23:11:28.488  INFO 24280 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-09-05 23:11:28.494  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1662430288493 with initial instances count: 4
+2022-09-05 23:11:28.498  INFO 24280 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MSUSERS with eureka with status UP
+2022-09-05 23:11:28.499  INFO 24280 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1662430288499, current=UP, previous=STARTING]
+2022-09-05 23:11:28.532  INFO 24280 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSUSERS/msusers:1732df1c1fc6fe2c89fe65347c851504: registering service...
+2022-09-05 23:11:28.624  INFO 24280 --- [main] b.com.pagsys.msusers.MsusersApplication  : Started MsusersApplication in 11.754 seconds (JVM running for 12.937)
+2022-09-05 23:11:28.648  INFO 24280 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSUSERS/msusers:1732df1c1fc6fe2c89fe65347c851504 - registration status: 204
+2022-09-05 23:11:41.734  INFO 24280 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-05 23:11:41.735  INFO 24280 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-05 23:11:41.739  INFO 24280 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-09-05 23:16:27.966  INFO 24280 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:21:27.972  INFO 24280 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:26:27.974  INFO 24280 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-09-05 23:31:27.983  INFO 24280 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
