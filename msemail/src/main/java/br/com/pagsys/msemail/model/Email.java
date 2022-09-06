@@ -2,12 +2,14 @@ package br.com.pagsys.msemail.model;
 
 import br.com.pagsys.msemail.enums.EmailType;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Data
+@ToString
 public class Email {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

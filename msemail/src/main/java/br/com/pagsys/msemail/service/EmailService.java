@@ -80,7 +80,8 @@ public class EmailService {
 
     private void send(String to, EmailType type, String subject, String text){
 
-        this.emailRepository.save(new Email(type, to, new Date()));
+        Email save = this.emailRepository.save(new Email(type, to, new Date()));
+        log.info("saving email record for: "+save.toString());
 
         var mail = new SimpleMailMessage();
         mail.setTo(to);
