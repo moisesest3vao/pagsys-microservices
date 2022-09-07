@@ -1,9 +1,9 @@
 # PagSys Microsservices
-Este projeto é um conjunto de API's que comunicam-se entre si de forma assíncrona, utilizando o Cluster Apache Kafka para mensageria. O projeto está no início da implementação, e possui o seguinte esqueleto:
+Este é meu projeto de estudos em Arquitetura de Microsserviços, utilizando Mensageria com Apache Kafka, RedHat Keycloak Authorization Server para gestão de identidade, e 3 bancos de dados, são eles: MySQL para o serviço de pagamento, PostgreSQL para o de email e um NoSQL, MongoDB para o inventário. As API's foram desenvolvidas com Java 17 e Spring, utilizando componentes como Netflix Eureka Server e Spring Cloud Gateway. 
 <br>
 <br>
-<img src="https://i.imgur.com/9xHpUjS.png">
+<img src="https://i.imgur.com/Sr8NZS2.png">
 <br>
 <br>
-No total serão 8 serviços rodando ao mesmo tempo, fechando o ciclo total de uma compra
+No total são 13 containers de aplicação rodando ao mesmo tempo.
 
