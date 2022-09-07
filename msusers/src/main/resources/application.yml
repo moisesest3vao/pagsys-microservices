@@ -4,7 +4,7 @@ app:
       server-url: http://localhost:8081
       realm: pagsysrealm
       clientId: msusers
-      client-secret: UnGWpNNNy5nymsftqbVM50C38erp3CEd
+      client-secret: M9NVaVnF8boeoASvsPjmkG9VeTtqjEeI
 
 spring:
   application:
